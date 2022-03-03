@@ -53,7 +53,7 @@ h1,h2,h3,h4{
     letter-spacing: var(--spacing);
     text-transform: capitalize;
     line-height: 1.25;
-    margin: 0.75rem;
+    margin-bottom: 0.75rem;
 }
 h1{
     font-size: 3rem;
@@ -76,12 +76,12 @@ p{
     text-transform: uppercase;
     background: var(--crl-primary-dark);
     color: white;
-    padding: 0.75rem 1rem;
+    padding: 0.375rem 0.75rem;
     letter-spacing: var(--spacing);
     display: inline-block;
     font-weight: 700;
     transition: var(--transition);
-    font-size: 1rem;
+    font-size: 0.875rem;
     border: none;
     cursor: pointer;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2)
@@ -112,6 +112,32 @@ p{
         line-height: 1;
     }
 }
+.clearfix::after,
+.clearfix::before{
+    content: '';
+    clear: both;
+    display: table;
+}
+.section-title h3,h2{
+    font-family: var(--ff-primary);
+    color: var(--crl-primary-dark);
+}
+.section-title{
+    margin-bottom: 2rem;
+}
+.section-center{
+    padding: 4rem 0;
+    width: 85vw;
+    margin: 0 auto;
+    max-width: 1170px;
+}
+@media screen and (min-widht:992px){
+    .section-center{
+        width: 95vw;
+        padding: 4rem 1rem;
+    }
+}
+
 /* end global styles */
 
 /* more global css */
@@ -215,9 +241,104 @@ Skills
     }
 }
 
-.clearfix::after,
-.clearfix::before{
-    content: '';
-    clear: both;
-    display: table;
+/* ============
+About
+===============
+ */
+
+.about-img, .about-info{
+    padding: 2rem 0;
 }
+.about-picture-container{
+    background: var(--crl-primary);
+    border: 0.25rem solid var(--crl-primary);
+    max-width: 30rem;
+    /* extra stuff */
+    overflow: hidden;
+}
+.about-picture{
+    transform: var(--transition);
+}
+.about-picture-container:hover .about-picture{
+    opacity: 0.5;
+    transform: scale(1.2);
+}
+.about-text {
+    max-width: 26rem;
+    color: var(--crl-grey);
+}
+
+@media screen and (min-width:992px) {
+    .about-img, .about-info{
+        float: left;
+        width: 50%;
+    }
+}
+.about-info{
+    padding-left: 2rem;
+}
+
+/* ============
+Products
+===============
+ */
+.products{
+    background: var(--crl-grey-light);
+    
+}
+.products article{
+    padding: 2rem 0;
+}
+
+.product-text{
+    color: var(--crl-grey);
+    max-width: 26rem;
+}
+.product{
+    margin-bottom: 2rem;
+}
+.product-img{
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    height: 17rem;
+    object-fit: cover;
+}
+.product-title{
+color: var(--crl-grey);
+}
+
+@media screen and (min-width:768px){
+    .product{
+        float: left;
+        width: 50%;
+        padding-right: 2rem;
+    }
+}
+@media screen and (min-width:992px){
+    .product{
+        
+        width: 33.3%;
+        
+    }
+}
+
+@media screen and (min-width:1200px){
+    .product-info{
+        float: left;
+        width: 30%;
+    /* border: 2px solid red; */
+    }
+    .product-inventory{
+        float: left;
+        width: 70%;
+    /* border: 2px solid red; */
+    }
+    .product{
+        margin: 0;
+        padding: 0 1rem;
+    }
+}
+/* ============
+Services
+===============
+*/
