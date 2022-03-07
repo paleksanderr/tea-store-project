@@ -141,6 +141,157 @@ p{
 /* end global styles */
 
 /* more global css */
+/* ============
+Animation
+===============
+*/
+@keyframes bounce {
+    0%{
+        transform: scale(1);
+    }
+    50%{        
+        transform: scale(2);
+}
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes slideFromRight {
+    0%{
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+    50%{        
+        transform: translateX(-200px);
+        opacity: 0.5;
+    }
+
+    75%{ transform: translateX(50px);
+        opacity: 0.75;
+    }
+
+    
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes slideFromLeft {
+    0%{
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    50%{        
+        transform: translateX(200px);
+        opacity: 0.5;
+    }
+
+    75%{ transform: translateX(-50px);
+        opacity: 0.75;
+    }
+
+    
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes show {
+    0%{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    50%{        
+        transform: scale(2);
+        opacity: 0.5;
+}
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* ============
+Navbar
+===============
+ */
+.nav-btn{
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    font-size: 2.5rem;
+    color: var(--crl-primary-dark);
+    z-index: 1;
+    cursor: pointer;
+    /* animation */
+    animation: bounce 2s ease infinite;
+}
+/* navbar */
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* width: 25%;
+    height: 100%; */
+    background: var(--crl-grey-light);
+    z-index: 2;
+    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.2);
+    /* hide navbar */
+    transform: translateX(-100%);
+    transition: var(--transition);
+}
+
+.showNav{
+    transform: translate(0);
+}
+
+.navbar-header {
+    text-align: right;
+    padding-right: 1rem;
+
+}
+.nav-close{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: rgb(170, 97, 97);
+    transition: var(--transition);
+
+}
+
+.nav-close:hover{
+    color: red;
+}
+.nav-items{
+    list-style-type: none;
+}
+.nav-link{
+    display: block;
+    font-size: 1.5rem;
+    padding: 0.25rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: var(--spacing);
+    color: var(--crl-grey);
+    transition: var(--transition);
+}
+.nav-link:hover{
+    color: var(--crl-grey-dark);
+    background: var(--crl-primary-light);
+    padding-left: 1.5rem;
+    border-left: 0.25rem solid var(--crl-primary);
+}
+
+@media screen and (min-width:768px){
+    .navbar{
+        width: 30vw;
+        max-width: 20rem;
+    }
+    
+}
 
 /* ============
 Header
@@ -165,6 +316,7 @@ Header
 .banner h2 {
     color: var(--crl-primary);
     /* animation */
+    animation: slideFromRight 5s ease-in-out 1 ;
 }
 
 .banner h1 {
@@ -173,6 +325,7 @@ Header
     margin-top: 1.25;
     margin-bottom: 2rem;
     /* animation */
+     animation: slideFromLeft 5s ease-in-out 1 ;
 }
 
 .banner-btn{
@@ -180,6 +333,7 @@ Header
     outline-offset: 0.125rem;
     font-size: 1.25rem;
     padding: 1rem 1.75rem;
+    animation: show 5s linear 1;
 
 }
 
@@ -498,6 +652,30 @@ Contact
 Footer
 ===============
  */
+.footer{
+    background: var(--clr-black);
+    text-align: center;
+}
 
-
- 
+.social-icon{
+    color: var(--clr-white);
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    transition: var(--transition);
+}
+.social-icon:hover{
+    color: var(--crl-primary-dark);
+}
+.footer-text{
+    margin-top: 1.25rem;
+    text-transform: uppercase;
+    color: var(--clr-white);
+    transition: var(--transition);
+    font-weight: 400;
+}
+.company{
+    color: var(--crl-primary-dark);
+}
+.footer-text:hover{
+    color: var(--crl-primary-dark);
+}
