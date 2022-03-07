@@ -329,7 +329,7 @@ Header
 }
 
 .banner-btn{
-    outline: 0.125rem solid var(--crl-primary-dark);
+    outline: 0.125rem solid var(--crl-primary);
     outline-offset: 0.125rem;
     font-size: 1.25rem;
     padding: 1rem 1.75rem;
