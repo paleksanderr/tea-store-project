@@ -323,7 +323,7 @@ Header
     text-transform: uppercase;
     color: var(--crl-primary-light);
     margin-top: 1.25;
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
     /* animation */
      animation: slideFromLeft 5s ease-in-out 1 ;
 }
